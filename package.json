@@ -1,0 +1,21 @@
+{
+  "name": "swarmstack-grafana-caddy-karma-portworx-prometheus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "git add . && git commit -m Build && git push",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/swarmstack/swarmstack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/swarmstack/swarmstack/issues"
+  },
+  "homepage": "https://github.com/swarmstack/swarmstack#readme"
+}
