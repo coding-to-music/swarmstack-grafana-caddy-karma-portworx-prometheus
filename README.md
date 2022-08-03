@@ -26,6 +26,42 @@ git remote add origin git@github.com:coding-to-music/swarmstack-grafana-caddy-ka
 git push -u origin main
 ```
 
+## Results:
+
+```
+docker swarm init --advertise-addr my-ip-address
+Swarm initialized: current node (yu94e0q5knzyr9pm5ejcjahin) is now a manager.
+
+To add a worker to this swarm, run the following command:
+
+    docker swarm join --token SWMTKN-1-36uw59rxh7zvvi60z2pimfxhtyqxq9a32l84nmy6lckhubaelg-eyt0t5t3qp2fayat5k13bm39c my-ip-address:2377
+
+To add a manager to this swarm, run 'docker swarm join-token manager' and follow the instructions.
+```
+
+```
+docker-compose -f docker-compose-singlebox.yml up
+```
+
+no dashboards are visible, the system seems overloaded and Grafana can't load
+
+```
+ ⠿ Container swarmstack-grafana-caddy-karma-portworx-prometheus-kthxbye-1          Stopped                                                                                                                                                                             1.0s
+ ⠿ Container swarmstack-grafana-caddy-karma-portworx-prometheus-cadvisor-1         Stopped                                                                                                                                                                             0.9s
+ ⠿ Container swarmstack-grafana-caddy-karma-portworx-prometheus-alertmanagerB-1    Stopped                                                                                                                                                                            10.6s
+ ⠿ Container swarmstack-grafana-caddy-karma-portworx-prometheus-pushgateway-1      Stopped                                                                                                                                                                             1.0s
+ ⠿ Container swarmstack-grafana-caddy-karma-portworx-prometheus-portainer-agent-1  Stopped                                                                                                                                                                             0.0s
+ ⠿ Container swarmstack-grafana-caddy-karma-portworx-prometheus-grafana-1          Stopped                                                                                                                                                                             0.7s
+ ⠿ Container swarmstack-grafana-caddy-karma-portworx-prometheus-docker-gc-1        Stopped                                                                                                                                                                            10.5s
+ ⠿ Container swarmstack-grafana-caddy-karma-portworx-prometheus-prometheus-1       Stopped                                                                                                                                                                             0.9s
+ ⠿ Container swarmstack-grafana-caddy-karma-portworx-prometheus-portainer-1        Stopped                                                                                                                                                                             0.0s
+ ⠿ Container swarmstack-grafana-caddy-karma-portworx-prometheus-caddy-1            Stopped                                                                                                                                                                             0.0s
+ ⠿ Container swarmstack-grafana-caddy-karma-portworx-prometheus-karma-1            Stopped                                                                                                                                                                             1.1s
+ ⠿ Container swarmstack-grafana-caddy-karma-portworx-prometheus-alertmanager-1     Stopped
+```
+
+## Original Repo:
+
 <img align="right" src="https://raw.githubusercontent.com/swarmstack/swarmstack/master/documentation/logos/swarmstack150x150.png"> A starting point for the installation, maintenance, operation, and monitoring of your highly-available Docker swarm-based containerized applications. Features a modern DevOps toolset (Prometheus / Alertmanager / Grafana) for monitoring and alerting. Optional: Docker swarm node management including automatic installation of Docker swarm nodes or onboarding of existing swarms, stable highly-available persistent storage for your containers, firewall management, HTTPS by default, LDAP and web-proxied network support, dynamic swarm service discovery and monitoring using swarm service labels, and other HA features that your applications can take advantage of. Installation requires only cut and paste of a few commands and editing some documented files.
 
 <!-- TOC -->
